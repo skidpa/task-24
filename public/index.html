@@ -3,19 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <!-- Compiled and minified CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript">
-        axios.get('/data').then(function (response){
-            console.log(response.data);
-            document.getElementById('namn').innerHTML = response.data['name'];
+        axios.get('/data').then(function (response) {
+            //console.log(response.data);
+            //document.getElementById('namn').innerHTML = response.data['name'];
         })
     </script>
 
+    <style>
+        .exempel {
+            overflow-wrap: break-word;
+        }
+
+        .sidenav {
+            box-shadow: none;
+        }
+        .section-wrapper{
+            margin-left: 15px;
+        }
+    </style>
+
 </head>
 <body>
-<h1>Hej</h1>
+<!--<h1>Hej</h1>
 
 <p id="namn"></p>
+-->
+<!-- Navbar goes here -->
+
+<!-- Page Layout here -->
+<!--<div class="row">
+
+
+    <div class="col s2 offset-s1 sidenav sidenav-fixed" > <!-- Note that "m4 l3" was added    m4 l3 -->
+<!-- Grey navigation panel
+      This content will be:
+  3-columns-wide on large screens,
+  4-columns-wide on medium screens,
+  12-columns-wide on small screens  -->
+
+
+<!--    </div>
+
+    <div class="col s8 offset-s3 exempel" style="height: 5000px;"> <!-- Note that "m8 l9" was added  s12 m8 l9-->
+<!-- Teal page content
+
+      This content will be:
+  9-columns-wide on large screens,
+  8-columns-wide on medium screens,
+  12-columns-wide on small screens  -->
+<!--        <p>hejdåhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</p>
+
+
+    </div>
+
+</div>-->
+
+<div class="row">
+    <div class="grid-example col s8 offset-s3" style="background-color: whitesmoke;">
+        <span class="flow-text"><br></span>
+    </div>
+    <div class="grid-example col s2 offset-s1 m2 offset-m1 sidenav sidenav-fixed" style="background-color: #e3e3e3;">
+        <span class="flow-text" >bild n shit</span>
+        <div class="profile-image">
+            <img src="" id="profileimage" alt="Profile image">
+        </div>
+        <div class="profile-wrapper">
+            <div class="contact">
+
+            </div>
+            <div class="skills">
+
+            </div>
+            <div class="languages">
+
+            </div>
+        </div>
+
+    </div>
+    <div class="grid-example col s8 offset-s3 m8 offset-m3 exempel" style="background-color: #e3e3e3;">
+        <h3 id="name"></h3>
+    </div>
+    <div class="grid-example col s8 offset-s3 m8 offset-m3 exempel" style="background-color: whitesmoke;">
+        <!--<span class="flow-text">cv skit här</span>-->
+        <div class="section-wrapper">
+            <div class="divider"></div>
+            <div class="section">
+                <h5>Personal profile</h5>
+                <p id="profile">
+            </div>
+            <div class="divider"></div>
+            <div class="section">
+                <h5>Education</h5>
+                <p id="education">
+            </div>
+            <div class="divider"></div>
+            <div class="section">
+                <h5>Experiences</h5>
+                <p id="experience">
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
