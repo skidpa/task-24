@@ -36,7 +36,18 @@
       "developer": "java",
       "description": "did nothing"
     }]
-  }],
+  },
+    {
+      "type": "work",
+      "name": "company name",
+      "role": "did computer stuff",
+      "startdate": "0002",
+      "enddate": "0003",
+      "tasks": [{
+        "developer": "java",
+        "description": "did nothing"
+      }]
+    }],
   "theoreticalexperience":[{
     "programinglanguage": "python",
     "proficiency": "awesome",
