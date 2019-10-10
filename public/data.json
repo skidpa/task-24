@@ -30,12 +30,16 @@
     "type": "work",
     "name": "company name",
     "role": "did computer stuff",
-    "startdate": "0002",
-    "enddate": "0003",
+    "expstartdate": "0002",
+    "expenddate": "0003",
     "tasks": [{
       "developer": "java",
       "description": "did nothing"
-    }]
+    },
+      {
+        "developer": "c++",
+        "description": "did more"
+      }]
   }],
   "theoreticalexperience":[{
     "programinglanguage": "python",
@@ -56,5 +60,5 @@
     "email": "urban@theboss.com"
   }],
   "imageurl": "",
-  "profile": "wall of text here..."
+  "profile": "I'm Bob and I'm the Baws"
 }
