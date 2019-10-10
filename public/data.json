@@ -1,0 +1,12 @@
+{
+  "name": "Bob",
+  "lastname": "Bobson",
+  "age": 1,
+  "address": [{
+    "street": "some street",
+    "street number": 1,
+    "city": "some city",
+    "state": "Texas",
+    "country": "USA"
+  }]
+}
