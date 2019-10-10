@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript">
+        axios.get('/data').then(function (response){
+            console.log(response.data);
+            document.getElementById('namn').innerHTML = response.data['name'];
+        })
+    </script>
+
+</head>
+<body>
+<h1>Hej</h1>
+
+<p id="namn"></p>
+
+</body>
+</html>
