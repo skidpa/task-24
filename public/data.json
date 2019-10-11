@@ -3,9 +3,9 @@
   "lastname": "Bobson",
   "age": 1,
   "address": [{
-    "street": "some street",
-    "street number": "1",
-    "city": "some city",
+    "street": "Klostergatan",
+    "streetnumber": "6",
+    "city": "Stockholm",
     "state": "Texas",
     "country": "USA"
   }],
