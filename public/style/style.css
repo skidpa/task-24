@@ -9,6 +9,10 @@ body {
     top: 11px;
 }
 
+#experience li {
+    margin-left: 25px;
+}
+
 .namecolor{
     background-color: #DCC6B3;
 }
@@ -34,7 +38,7 @@ body {
     box-shadow: none;
 }
 .section-wrapper{
-    margin-left: 15px;
+    margin-left: 25px;
     margin-bottom: 15px;
 }
 
@@ -58,17 +62,25 @@ body {
 .contactInfo{
     position: relative;
 }
-
+.sideInfo::-webkit-scrollbar {
+    width: 0 !important;
+}
+.sideInfo {
+    overflow: -moz-scrollbars-none;
+}
 .profile-wrapper h5 {
     margin-left: 21px;
     font-family: 'Arapey';
 }
 
 .profile-wrapper {
+    width: auto;
     margin-bottom: 21px;
 }
 
-.skill p{
+.profile-wrapper p{
+    font-family: 'Barlow Condensed';
+    font-size: 19px;
     /*margin-left: 21px;*/
 }
 
