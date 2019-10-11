@@ -3,9 +3,9 @@
   "lastname": "Bobson",
   "age": 1,
   "address": [{
-    "street": "some street",
-    "street number": "1",
-    "city": "some city",
+    "street": "Klostergatan",
+    "streetnumber": "6",
+    "city": "Stockholm",
     "state": "Texas",
     "country": "USA"
   }],
@@ -35,17 +35,30 @@
     "tasks": [{
       "developer": "java",
       "description": "did nothing"
-    },
-      {
-        "developer": "c++",
-        "description": "did more"
+    }]
+  },
+    {
+      "type": "work",
+      "name": "company name",
+      "role": "did computer stuff",
+      "startdate": "0002",
+      "enddate": "0003",
+      "tasks": [{
+        "developer": "java",
+        "description": "did nothing"
       }]
-  }],
-  "theoreticalexperience":[{
-    "programinglanguage": "python",
-    "proficiency": "awesome",
-    "description": "did nothing"
-  }],
+    }],
+  "skills":[
+    {
+    "skillname": "python"
+    },
+    {
+      "skillname": "Java"
+    },
+    {
+      "skillname": "Ruby"
+    }],
+
   "language": [{
     "language": "english",
     "spoken": "awesome",
@@ -60,5 +73,5 @@
     "email": "urban@theboss.com"
   }],
   "imageurl": "",
-  "profile": "I'm Bob and I'm the Baws"
+  "profile": "wall of text here..."
 }

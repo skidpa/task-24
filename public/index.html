@@ -6,133 +6,153 @@
 
     <!-- Compiled and minified CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css">
+    <link rel="stylesheet" href="/style/style.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript">
-        function createTag(tag, section, name, num, text) {
-            let tagName = name + num;
-            tagName = document.createElement(tag);
-            tagName.id = name + num;
-            document.body.appendChild(tagName);
-            document.getElementById(tagName.id).innerHTML = name + ": " + text;
-            document.getElementById(section).appendChild(tagName);
-        }
 
-        axios.get('/data').then(function (response) {
-            let education = response.data['education'];
-            let pExp = response.data['practicalexperience'];
-            //let pExpTask = pExp;
-            console.log(pExp)
-            document.getElementById('name').innerHTML = response.data['name'] + " " + response.data['lastname'];
-            document.getElementById('profile').innerHTML = response.data['profile'];
-
-            let eduArr = ['school', 'city', 'programme', 'startdate', 'enddate', 'degree'];
-            //for (const eduObjNum in response.data['education']){
-            for (const eduObjNum in education) {
-                for (let i = 0; i < eduArr.length; i++) {
-                    createTag('p', 'education', eduArr[i], eduObjNum, education[eduObjNum][eduArr[i]]);
-                }
-            }
-
-            let expArr = ['type', 'name', 'role', 'expstartdate', 'expenddate', 'tasks'];
-            for (const expObjNum in pExp) {
-                for (let i = 0; i < expArr.length; i++) {
-
-                    if (expArr[i] !== 'tasks') {
-                        createTag('p', 'experience', expArr[i], expObjNum, pExp[expObjNum][expArr[i]]);
-
-                    } else {
-                        let pExpTask = pExp[expObjNum]['tasks'];
-                        console.log(pExpTask)
-                        for (let j = 0; j < pExpTask.length; j++) {
-                            for (let p in pExpTask[j]) {
-                                console.log(expArr[i] + " " + pExpTask[j][p]);
-                                console.log(j)
-                                createTag('li', 'exp-task', p, 'task' + expObjNum + j, pExpTask[j][p]);
-                            }
-                        }
-                    }
-                }
-            }
-
-
-        })
     </script>
-
-    <style>
-        .exempel {
-            overflow-wrap: break-word;
-        }
-
-        .sidenav {
-            box-shadow: none;
-        }
-
-        .section-wrapper {
-            margin-left: 15px;
-        }
-    </style>
 
 </head>
 <body>
+<!--<h1>Hej</h1>
+
+<p id="namn"></p>
+-->
+<!-- Navbar goes here -->
+
+<!-- Page Layout here -->
+<!--<div class="row">
+
+
+    <div class="col s2 offset-s1 sidenav sidenav-fixed" >
+      This content will be:
+  3-columns-wide on large screens,
+  4-columns-wide on medium screens,
+  12-columns-wide on small screens  -->
+
+
+<!--    </div>
+
+    <div class="col s8 offset-s3 exempel" style="height: 5000px;">
+
+      This content will be:
+  9-columns-wide on large screens,
+  8-columns-wide on medium screens,
+  12-columns-wide on small screens  -->
+<!--        <p>hejdåhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</p>
+
+
+    </div>
+
+</div>-->
+
 
 <div class="row">
     <div class="grid-example col s8 offset-s3" style="background-color: whitesmoke;">
         <span class="flow-text"><br></span>
     </div>
-    <div class="grid-example col s2 offset-s1 m2 offset-m1 sidenav sidenav-fixed" style="background-color: #e3e3e3;">
-        <span class="flow-text">bild n shit</span>
+    <div class="grid-example col s2 offset-s1 m2 offset-m1 sidenav sidenav-fixed sideInfo"
+         style="background-color: #e3e3e3;">
+
         <div class="profile-image">
-            <img src="" id="profileimage" alt="Profile image">
+            <img src="/img/Bobbobson.jpg" id="profileimage" class="profimg" alt="Profile image">
         </div>
         <div class="profile-wrapper">
             <div class="contact">
+                <h5>Contact Info</h5>
+                <div class=" contactInfo mdc-list">
+                    <li class="mdc-list-item" tabindex="0">
+                        <span class="mdc-list-item__graphic material-icons">phone_android</span>
+                        <p id="phone"></p>
+                    </li>
+                    <li class="mdc-list-item">
+                        <span class="mdc-list-item__graphic material-icons">email</span>
+                        <p id="email"></p>
+                    </li>
+                    <li class="mdc-list-item">
+                        <span class="mdc-list-item__graphic material-icons">location_city</span>
+                        <p id="address"></p>
+                    </li>
+                    <!--<li class="mdc-list-item">
+                        <span class="mdc-list-item__graphic lni-facebook-original size-sm "></span>
+                        <p id="facebook"></p>
+                    </li>-->
+                    <li class="mdc-list-item">
 
+                        <span class="mdc-list-item__graphic lni-linkedin-original size-sm "></span>
+                        <p id="linkedin"></p>
+                    </li>
+                    <li class="mdc-list-item">
+
+                        <span class="mdc-list-item__graphic lni-stackoverflow size-sm "></span>
+                        <p id="stackoverflow"></p>
+                    </li>
+                    <li class="mdc-list-item">
+                        <span class="mdc-list-item__graphic lni-github-original size-sm "></span>
+                        <p id="github"></p>
+                    </li>
+
+                </div>
             </div>
-            <div class="skills">
+            <div class="skill">
+                <h5>Key Skills</h5>
+                <div class="divider"></div>
+                <div class="mdc-list-item__text" id="skills"></div>
 
             </div>
             <div class="languages">
-
+                <h5>Languages</h5>
+                <div class="divider"></div>
+                <div class="mdc-list-item__text" id="lang">
+                    <p id="bu"></p>
+                </div>
             </div>
         </div>
 
     </div>
+
     <div class="grid-example col s8 offset-s3 m8 offset-m3 exempel" style="background-color: #e3e3e3;">
-        <h3 id="name"></h3>
+        <div class="section-wrapper">
+            <h3 id="name"></h3>
+            <h5> Test Data Hello </h5>
+        </div>
     </div>
     <div class="grid-example col s8 offset-s3 m8 offset-m3 exempel" style="background-color: whitesmoke;">
         <!--<span class="flow-text">cv skit här</span>-->
+
         <div class="section-wrapper">
             <div class="divider"></div>
             <div class="section">
-                <h5>Personal profile</h5>
+                <h4>Personal profile</h4>
                 <p id="profile">
             </div>
             <div class="divider"></div>
             <div class="section">
-                <h5>Education</h5>
-                <p id="education">
+                <h4>Education</h4>
+                <div id="education"></div>
             </div>
             <div class="divider"></div>
             <div class="section">
-                <h5>Experiences</h5>
-                <div id="experience">
-                </div>
-                <div id="task-div" class="section-wrapper">
-                    <h6>Tasks</h6>
-                    <li id="exp-task">
 
-                    </li>
-                </div>
+                <h4>Experiences</h4>
+                <div id="experience"></div>
+
             </div>
         </div>
     </div>
 </div>
-</div>
+<script>
 
+</script>
 </body>
+<footer>
+    <script src="/js/index.js"></script>
+</footer>
 </html>
