@@ -64,13 +64,20 @@ axios.get('/data').then(function (response) {
     document.getElementById('stackoverflow').innerHTML = response.data['contact'][0]['stackoverflow'];
     document.getElementById('github').innerHTML = response.data['contact'][0]['git'];
 
-    for(let i = 0; i<response.data['skills'].length; i++) {
+    /*for(let i = 0; i<response.data['skills'].length; i++) {
         for( let prop in response.data['skills'][i] ){
             console.log(response.data['skills'][i][prop]);
             console.log(prop);
             createTag(response.data['skills'][i][prop], 'p', 'skills', prop, i);
         }
-    }
+    }*/
+
+    document.getElementById('cpp').innerHTML = response.data['skills'][0]['skillname'];
+    document.getElementById('java').innerHTML = response.data['skills'][1]['skillname'];
+    document.getElementById('ruby').innerHTML = response.data['skills'][2]['skillname'];
+    document.getElementById('angular').innerHTML = response.data['skills'][3]['skillname'];
+    document.getElementById('node').innerHTML = response.data['skills'][4]['skillname'];
+    document.getElementById('linux').innerHTML = response.data['skills'][5]['skillname'];
 
     for(let i = 0; i<response.data['language'].length; i++) {
         document.getElementById('bu').innerHTML += response.data['language'][i]['language'] + ' | ' + response.data['language'][i]['spoken'] + '</br>'

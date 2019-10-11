@@ -50,13 +50,22 @@
     }],
   "skills":[
     {
-    "skillname": "python"
+    "skillname": "C++"
     },
     {
       "skillname": "Java"
     },
     {
       "skillname": "Ruby"
+    },
+    {
+      "skillname": "Angular"
+    },
+    {
+      "skillname": "Nodejs"
+    },
+    {
+      "skillname": "Linux kernel"
     }],
 
   "language": [{
