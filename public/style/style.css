@@ -1,8 +1,33 @@
 body {
-    /*background-image: ;*/
+    background-image: url("/img/background.jpg");
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.row {
+    top: 11px;
+}
+
+.namecolor{
+    background-color: #DCC6B3;
 }
 .exempel {
     overflow-wrap: break-word;
+    background-color: #F3F2F2;
+    /*background-color: #DCC6B3;*/
+}
+
+.exempel h4 {
+    font-family: 'Arapey';
+}
+
+.section h5 {
+    font-size: 20px;
+}
+.exempel p {
+    font-family: 'Alegreya';
+    font-size: 15px;
 }
 
 .sidenav {
@@ -36,6 +61,7 @@ body {
 
 .profile-wrapper h5 {
     margin-left: 21px;
+    font-family: 'Arapey';
 }
 
 .profile-wrapper {
@@ -48,4 +74,13 @@ body {
 
 .languages p {
     margin-left: 21px;
+}
+
+.namesection h1 {
+    font-family: 'Alegreya';
+}
+
+.namesection h4 {
+    font-family: 'Arapey';
+    margin-top: -25px;
 }
