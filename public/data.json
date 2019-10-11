@@ -3,15 +3,9 @@
   "lastname": "Bobson",
   "age": 1,
   "address": [{
-<<<<<<< Updated upstream
     "street": "Klostergatan",
     "streetnumber": "6",
     "city": "Stockholm",
-=======
-    "street": "some street",
-    "streetnumber": "1",
-    "city": "some city",
->>>>>>> Stashed changes
     "state": "Texas",
     "country": "USA"
   }],
