@@ -17,10 +17,10 @@ axios.get('/data').then(function (response) {
         createTag(response.data['education'][0][prop], 'p','education', prop, counter);
     }*/
     counter = 0;
-    for(let i = 0; i< response.data['practicalexperience'].length; i++) {
-        for (let prop in response.data['practicalexperience'][i]){
+    for(let i = 0; i< response.data['experience'].length; i++) {
+        for (let prop in response.data['experience'][i]){
 
-            if( !Array.isArray(response.data['practicalexperience'][i][prop])){
+            if( !Array.isArray(response.data['experience'][i][prop])){
 
                 if(counter === 0) {
                     /*let drawTxt = document.createTextNode(response.data['practicalexperience'][i][prop]);
@@ -29,29 +29,36 @@ axios.get('/data').then(function (response) {
                      document.getElementById('experience').appendChild(drawP);
                      drawP.appendChild(drawTxt);*/
                     //console.log(response.data['practicalexperience'][i][prop]);
-                    createTag(response.data['practicalexperience'][i][prop], 'h5','experience', prop, counter);
-                } else {
+                    createTag( response.data['experience'][i][prop], 'h5','experience', prop, i);
+                }
+                else if(counter === 1) {
+                    let str = response.data['experience'][i]['company'] + ' | ' + response.data['experience'][i]['location'] + ' | '
+                        + response.data['experience'][i]['expstartdate'] + ' - ' + response.data['experience'][i]['expenddate'];
+                    createTag(str, 'p', 'experience', prop, i);
+                }
+                else if(counter === 2){
                     /*let drawTxt = document.createTextNode(prop + ': ' + response.data['practicalexperience'][i][prop]);
                     let drawP = document.createElement('p');
                     drawP.id = prop + counter;
                     document.getElementById('experience').appendChild(drawP);
                     drawP.appendChild(drawTxt);*/
-                    createTag(prop + ': ' + response.data['practicalexperience'][i][prop], 'p','experience', prop, counter);
+                    createTag(response.data['experience'][i]['role'], 'p','experience', prop, i);
                 }
                 counter++;
 
             } else {
-                let tasks =  response.data['practicalexperience'][i][prop][0];
+                let tasks =  response.data['experience'][i][prop][0];
                 for(let t in tasks) {
                     /*let drawTxt = document.createTextNode(tasks[t])
                     let drawLi = document.createElement('li');
                     drawLi.id = t + counter;
                     document.getElementById('experience').appendChild(drawLi);
                     drawLi.appendChild(drawTxt);*/
-                    createTag(tasks[t], 'li','experience', t, counter);
+                    createTag(tasks[t], 'li','experience', t, i);
                 }
             }
         }
+        document.getElementById('experience').appendChild(document.createElement('br'));
         counter = 0;
     }
     document.getElementById('name').innerHTML = response.data['name'] + ' ' + response.data['lastname'];
