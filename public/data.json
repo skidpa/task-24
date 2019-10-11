@@ -18,14 +18,24 @@
     "facebook": "facebook user",
     "stackoverflow": "stack user"
   }],
-  "education": [{
-    "school": "bth",
+  "education": [
+    {
+    "school": "Blekinge Institute of Technology",
     "city": "karlskrona",
-    "programme": "data",
-    "startdate": "0000",
-    "enddate": "0001",
+    "programme": "Master of Science in Industrial Engineering and Management",
+    "startdate": "2014",
+    "enddate": "2019",
     "degree": "failed"
-  }],
+  },
+    {
+      "school": "Blekinge Institute of Technology",
+      "city": "karlskrona",
+      "programme": "Master of Science in Industrial Engineering and Management",
+      "startdate": "2014",
+      "enddate": "2019",
+      "degree": "failed"
+    }
+  ],
   "practicalexperience": [{
     "type": "work",
     "name": "company name",
@@ -50,13 +60,22 @@
     }],
   "skills":[
     {
-    "skillname": "python"
+    "skillname": "C++"
     },
     {
       "skillname": "Java"
     },
     {
       "skillname": "Ruby"
+    },
+    {
+      "skillname": "Angular"
+    },
+    {
+      "skillname": "Nodejs"
+    },
+    {
+      "skillname": "Linux kernel"
     }],
 
   "language": [{
