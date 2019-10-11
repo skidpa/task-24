@@ -48,11 +48,16 @@
         "description": "did nothing"
       }]
     }],
-  "theoreticalexperience":[{
-    "programinglanguage": "python",
-    "proficiency": "awesome",
-    "description": "did nothing"
-  }],
+  "skills":[
+    {
+    "skillname": "python"
+    },
+    {
+      "skillname": "Java"
+    },
+    {
+      "skillname": "Ruby"
+    }],
   "language": [{
     "language": "english",
     "spoken": "awesome",

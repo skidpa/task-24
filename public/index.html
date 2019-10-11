@@ -9,98 +9,15 @@
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdn.lineicons.com/1.0.1/LineIcons.min.css">
+    <link rel="stylesheet" href="/style/style.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript">
-        function createTag(text, tag, parentId, prop, counter) {
-            let drawTxt = document.createTextNode(text);
-            let drawTag = document.createElement(tag);
-            drawTag.id = prop + counter;
-            document.getElementById(parentId).appendChild(drawTag);
-            drawTag.appendChild(drawTxt);
-        }
-        axios.get('/data').then(function (response) {
-            var counter = 0;
-            for( let prop in response.data['education'][0] ){
-                /*let drawTxt = document.createTextNode(response.data['education'][0][prop]);
-                let drawP = document.createElement('p');
-                drawP.id = prop + counter;
-                document.getElementById('education').appendChild(drawP);
-                drawP.appendChild(drawTxt);*/
-                createTag(response.data['education'][0][prop], 'p','education', prop, counter);
-            }
-            counter = 0;
-            for(let i = 0; i< response.data['practicalexperience'].length; i++) {
-                for (let prop in response.data['practicalexperience'][i]){
 
-                    if( !Array.isArray(response.data['practicalexperience'][i][prop])){
-
-                        if(counter === 0) {
-                           /*let drawTxt = document.createTextNode(response.data['practicalexperience'][i][prop]);
-                            let drawP = document.createElement('h5');
-                            drawP.id = prop + counter;
-                            document.getElementById('experience').appendChild(drawP);
-                            drawP.appendChild(drawTxt);*/
-                           //console.log(response.data['practicalexperience'][i][prop]);
-                            createTag(response.data['practicalexperience'][i][prop], 'h5','experience', prop, counter);
-                        } else {
-                            /*let drawTxt = document.createTextNode(prop + ': ' + response.data['practicalexperience'][i][prop]);
-                            let drawP = document.createElement('p');
-                            drawP.id = prop + counter;
-                            document.getElementById('experience').appendChild(drawP);
-                            drawP.appendChild(drawTxt);*/
-                            createTag(prop + ': ' + response.data['practicalexperience'][i][prop], 'p','experience', prop, counter);
-                        }
-                        counter++;
-
-                    } else {
-                        let tasks =  response.data['practicalexperience'][i][prop][0];
-                        for(let t in tasks) {
-                            /*let drawTxt = document.createTextNode(tasks[t])
-                            let drawLi = document.createElement('li');
-                            drawLi.id = t + counter;
-                            document.getElementById('experience').appendChild(drawLi);
-                            drawLi.appendChild(drawTxt);*/
-                            createTag(tasks[t], 'li','experience', t, counter);
-                        }
-                    }
-                }
-                counter = 0;
-            }
-            console.log(response.data['contact'][0]['phone']);
-            document.getElementById('phone').innerHTML = response.data['contact'][0]['phone'];
-            document.getElementById('email').innerHTML = response.data['contact'][0]['mail'];
-            document.getElementById('address').innerHTML = response.data['address'][0]['street'] +
-                ', ' + response.data['address'][0]['streetnumber'] +
-                ', ' + response.data['address'][0]['city'];
-            document.getElementById('linkedin').innerHTML = response.data['contact'][0]['linkedin'];
-            document.getElementById('stackoverflow').innerHTML = response.data['contact'][0]['stackoverflow'];
-            document.getElementById('github').innerHTML = response.data['contact'][0]['git'];
-            // experience
-            //console.log(response.data);
-            //document.getElementById('namn').innerHTML = response.data['name'];
-        })
     </script>
-
-    <style>
-        .exempel {
-            overflow-wrap: break-word;
-        }
-
-        .sidenav {
-            box-shadow: none;
-        }
-        .section-wrapper{
-            margin-left: 15px;
-        }
-
-        .sideInfo {
-            min-width: auto;
-        }
-    </style>
 
 </head>
 <body>
@@ -140,59 +57,70 @@
     <div class="grid-example col s8 offset-s3" style="background-color: whitesmoke;">
         <span class="flow-text"><br></span>
     </div>
-    <div class="grid-example col s2 offset-s1 m2 offset-m1 sidenav sidenav-fixed sideInfo" style="background-color: #e3e3e3;">
-        <span class="flow-text" >bild n shit</span>
+    <div class="grid-example col s2 offset-s1 m2 offset-m1 sidenav sidenav-fixed sideInfo"
+         style="background-color: #e3e3e3;">
         <div class="profile-image">
-            <img src="" id="profileimage" alt="Profile image">
+            <img src="/img/Bobbobson.jpg" id="profileimage" class="profimg" alt="Profile image">
         </div>
         <div class="profile-wrapper">
             <div class="contact">
+                <h5>Contact Info</h5>
+                <div class=" contactInfo mdc-list">
+                    <li class="mdc-list-item" tabindex="0">
+                        <span class="mdc-list-item__graphic material-icons">phone_android</span>
+                        <p id="phone"></p>
+                    </li>
+                    <li class="mdc-list-item">
+                        <span class="mdc-list-item__graphic material-icons">email</span>
+                        <p id="email"></p>
+                    </li>
+                    <li class="mdc-list-item">
+                        <span class="mdc-list-item__graphic material-icons">location_city</span>
+                        <p id="address"></p>
+                    </li>
+                    <!--<li class="mdc-list-item">
+                        <span class="mdc-list-item__graphic lni-facebook-original size-sm "></span>
+                        <p id="facebook"></p>
+                    </li>-->
+                    <li class="mdc-list-item">
 
+                        <span class="mdc-list-item__graphic lni-linkedin-original size-sm "></span>
+                        <p id="linkedin"></p>
+                    </li>
+                    <li class="mdc-list-item">
+
+                        <span class="mdc-list-item__graphic lni-stackoverflow size-sm "></span>
+                        <p id="stackoverflow"></p>
+                    </li>
+                    <li class="mdc-list-item">
+                        <span class="mdc-list-item__graphic lni-github-original size-sm "></span>
+                        <p id="github"></p>
+                    </li>
+
+                </div>
             </div>
-            <div class="skills">
+            <div class="skill">
+                <h5>Key Skills</h5>
+                <div class="divider"></div>
+                <div class="mdc-list-item__text" id="skills"></div>
 
             </div>
             <div class="languages">
-
+                <h5>Languages</h5>
+                <div class="divider"></div>
+                <div class="mdc-list-item__text" id="lang">
+                    <p id="bu"></p>
+                </div>
             </div>
         </div>
-        <div class="mdc-list">
-            <li class="mdc-list-item" tabindex="0">
-                <span class="mdc-list-item__graphic material-icons">phone_android</span>
-                <p id="phone"></p>
-            </li>
-            <li class="mdc-list-item">
-                <span class="mdc-list-item__graphic material-icons">email</span>
-                <p id="email"></p>
-            </li>
-            <li class="mdc-list-item">
-                <span class="mdc-list-item__graphic material-icons">location_city</span>
-                <p id="address"></p>
-            </li>
-            <!--<li class="mdc-list-item">
-                <span class="mdc-list-item__graphic lni-facebook-original size-sm "></span>
-                <p id="facebook"></p>
-            </li>-->
-            <li class="mdc-list-item">
 
-                <span class="mdc-list-item__graphic lni-linkedin-original size-sm "></span>
-                <p id="linkedin"></p>
-            </li>
-            <li class="mdc-list-item">
-
-                <span class="mdc-list-item__graphic lni-stackoverflow size-sm "></span>
-                <p id="stackoverflow"></p>
-            </li>
-            <li class="mdc-list-item">
-
-                <span class="mdc-list-item__graphic lni-github-original size-sm "></span>
-                <p id="github"></p>
-            </li>
-
-        </div>
     </div>
+
     <div class="grid-example col s8 offset-s3 m8 offset-m3 exempel" style="background-color: #e3e3e3;">
-        <h3 id="name"></h3>
+        <div class="section-wrapper">
+            <h3 id="name"></h3>
+            <h5> Test Data Hello </h5>
+        </div>
     </div>
     <div class="grid-example col s8 offset-s3 m8 offset-m3 exempel" style="background-color: whitesmoke;">
         <!--<span class="flow-text">cv skit här</span>-->
@@ -220,4 +148,7 @@
 
 </script>
 </body>
+<footer>
+    <script src="/js/index.js"></script>
+</footer>
 </html>
