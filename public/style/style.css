@@ -1,0 +1,51 @@
+body {
+    /*background-image: ;*/
+}
+.exempel {
+    overflow-wrap: break-word;
+}
+
+.sidenav {
+    box-shadow: none;
+}
+.section-wrapper{
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.sideInfo {
+    min-width: auto;
+}
+.profile-image {
+    /*position: fixed;*/
+    margin-top: 20px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    height:auto;
+}
+.profimg {
+    border-radius: 50%;
+    max-width: 100%;
+    object-fit: scale-down;
+    height: auto;
+}
+.contactInfo{
+    position: relative;
+}
+
+.profile-wrapper h5 {
+    margin-left: 21px;
+}
+
+.profile-wrapper {
+    margin-bottom: 21px;
+}
+
+.skill p{
+    margin-left: 21px;
+}
+
+.languages p {
+    margin-left: 21px;
+}
