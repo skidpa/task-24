@@ -30,8 +30,8 @@
     "type": "work",
     "name": "company name",
     "role": "did computer stuff",
-    "startdate": "0002",
-    "enddate": "0003",
+    "expstartdate": "0002",
+    "expenddate": "0003",
     "tasks": [{
       "developer": "java",
       "description": "did nothing"
@@ -58,6 +58,7 @@
     {
       "skillname": "Ruby"
     }],
+
   "language": [{
     "language": "english",
     "spoken": "awesome",
